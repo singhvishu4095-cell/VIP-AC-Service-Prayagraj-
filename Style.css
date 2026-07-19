@@ -1,0 +1,81 @@
+:root {
+    --primary: #007bff;
+    --secondary: #0056b3;
+    --dark: #1a1a1a;
+    --light: #f8f9fa;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--dark); overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Sticky Buttons */
+.sticky-action { position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px; }
+.sticky-action a { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.whatsapp-btn { background: #25d366; }
+.call-btn { background: var(--primary); }
+
+/* Header */
+header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 999; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+.logo { font-size: 28px; font-weight: 700; color: var(--dark); }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: var(--transition); }
+.nav-links a:hover { color: var(--primary); }
+.btn-primary { background: var(--primary); color: white !important; padding: 10px 20px; border-radius: 5px; }
+
+/* Hero */
+.hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=1600') center/cover; height: 80vh; display: flex; align-items: center; color: white; text-align: center; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.hero h1 span { color: var(--primary); }
+.hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-inline: auto; }
+.btn-main { background: var(--primary); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; margin-right: 15px; font-weight: 600; }
+.btn-outline { border: 2px solid white; color: white; padding: 13px 30px; text-decoration: none; border-radius: 5px; font-weight: 600; }
+
+/* Services */
+.section-title { text-align: center; margin: 50px 0; font-size: 2.5rem; position: relative; }
+.section-title::after { content: ''; width: 60px; height: 4px; background: var(--primary); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.service-card { background: var(--light); padding: 40px; text-align: center; border-radius: 10px; transition: var(--transition); }
+.service-card:hover { transform: translateY(-10px); background: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.service-card i { font-size: 40px; color: var(--primary); margin-bottom: 20px; }
+
+/* Booking Form */
+.booking { background: var(--dark); color: white; padding: 80px 0; margin-top: 50px; }
+.booking-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.contact-details { list-style: none; margin-top: 20px; }
+.contact-details li { margin-bottom: 15px; font-size: 1.1rem; }
+.contact-details i { color: var(--primary); margin-right: 10px; }
+.booking-form { display: flex; flex-direction: column; gap: 15px; background: white; padding: 30px; border-radius: 10px; }
+.booking-form input, .booking-form select, .booking-form textarea { padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; }
+.btn-submit { background: var(--primary); color: white; border: none; padding: 15px; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 16px; }
+
+/* Gallery */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+.gallery-grid img { width: 100%; border-radius: 10px; height: 250px; object-fit: cover; }
+
+/* Reviews */
+.reviews { padding: 80px 0; background: var(--light); }
+.review-slider { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.review-card { background: white; padding: 30px; border-radius: 10px; width: 45%; min-width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.stars { color: #f1c40f; font-size: 20px; margin-bottom: 10px; }
+
+/* FAQ */
+.faq-item { border-bottom: 1px solid #ddd; padding: 20px 0; cursor: pointer; }
+.faq-question { font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+.faq-answer { display: none; margin-top: 10px; color: #666; }
+
+/* Footer */
+footer { text-align: center; padding: 40px 0; background: #111; color: #888; }
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: white; flex-direction: column; padding: 20px; box-shadow: 0 10px 10px rgba(0,0,0,0.1); }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; font-size: 24px; cursor: pointer; }
+    .hero h1 { font-size: 2.2rem; }
+    .booking-container { grid-template-columns: 1fr; }
+}
